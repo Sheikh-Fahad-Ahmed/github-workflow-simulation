@@ -7,7 +7,7 @@ to **3 distinct branch channels** which is monitored and managed by a branch lis
 
 1. **Developers:** Six distinct goroutines (`Dev-1` through `Dev-6`) map to specific commits and pushed to their designated branch channels (`featureA`, `featureB` and `main`)
 
-2.**Branch Listeners:** Three separate goroutines monitor the branches
+2. **Branch Listeners:** Three separate goroutines monitor the branches. Once a branch is drained and closed, the listeners triggers an automated `AUTO-MERGE` signal into the shared `mergeCh`-_unless_ it is the `main` branch.
 
 3. **Merge Handler:** A final goroutine drains the `mergeCh`, outputs the merge log to console, and signals `main` via `done` channel when the workspace is synchronized
 
