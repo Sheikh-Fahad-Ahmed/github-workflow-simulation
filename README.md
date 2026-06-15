@@ -1,6 +1,6 @@
 # Github Workflow Simulation
 
-A Go program that simulates the Workflow of a Github Repo used by **6 developer goroutines** pushing
+A Go program that simulates the Workflow of a Github Repo done by **6 developer goroutines** pushing
 to **3 distinct branch channels** which is monitored and managed by a branch listener.
 
 ## Architecture Overview
